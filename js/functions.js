@@ -3,14 +3,14 @@ function maxLength(string, length) {
 }
 
 // Cтрока короче 20 символов
-maxLength("проверяемая строка", 20); // true
+maxLength('проверяемая строка', 20); // true
 // Длина строки ровно 18 символов
-maxLength("проверяемая строка", 18); // true
+maxLength('проверяемая строка', 18); // true
 // Строка длиннее 10 символов
-maxLength("проверяемая строка", 10); // false
+maxLength('проверяемая строка', 10); // false
 
 function isPalindrom(rawString) {
-  const string = rawString.replaceAll(" ", "").toLowerCase();
+  const string = rawString.replaceAll(' ', ' ').toLowerCase();
   const halfStringLenth = string.length / 2;
 
   for (let i = 0; i < halfStringLenth; i++) {
@@ -24,8 +24,8 @@ function isPalindrom(rawString) {
 }
 
 // Строка является палиндромом
-isPalindrom("топот"); // true
+isPalindrom('топот'); // true
 // Несмотря на разный регистр, тоже палиндром
-isPalindrom("ДовОд"); // true
+isPalindrom('ДовОд'); // true
 // Это не палиндром
-isPalindrom("Кекс"); // false
+isPalindrom('Кекс'); // false
