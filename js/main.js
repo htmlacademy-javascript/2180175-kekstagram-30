@@ -1,14 +1,14 @@
 //getComments
-const minInteger = 1;
-const maxInteger = 6;
+const MIN_INTEGER = 1;
+const MAX_INTEGER = 6;
 
 //getMocks(Likes)
-const minLikesInteger = 15;
-const maxLikesInteger = 200;
+const MIN_LIKES_INTEGER = 15;
+const MAX_LIKES_INTEGER = 200;
 
 //getMocks(Comments)
-const minCommentsInteger = 0;
-const maxCommentsInteger = 30;
+const MIN_COMMENTS_INTEGER = 0;
+const MAX_COMMENTS_INTEGER = 30;
 
 // Получение рандомного числа в диапазоне(min, max):
 
@@ -19,7 +19,7 @@ const getRandomInteger = (a, b) => {
   return Math.floor(result);
 };
 
-const names = ['Артем', 'Андрей', 'Семён'];
+const names = ['Артем', 'Андрей', 'Семён', 'Олег', 'Софья', 'Татьяна', 'Кирилл', 'Александр'];
 
 // Получение рандомного комментария:
 
@@ -28,7 +28,7 @@ const getComments = function (commentsCount) {
   for (let i = 0; i < commentsCount; i++) {
     result.push({
       id: i + 1,
-      avatar: `img/avatar-${getRandomInteger(minInteger, maxInteger)}.svg`,
+      avatar: `img/avatar-${getRandomInteger(MIN_INTEGER, MAX_INTEGER)}.svg`,
       message: 'В целом всё неплохо. Но не всё.',
       name: names[getRandomInteger(0, names.length - 1)],
     });
@@ -45,8 +45,8 @@ const getMocks = function (idCount) {
       id: i + 1,
       url: `photos/${i + 1}.jpg`,
       description: 'Красивая фотография',
-      likes: getRandomInteger(minLikesInteger, maxLikesInteger),
-      comments: getComments(getRandomInteger(minCommentsInteger, maxCommentsInteger))
+      likes: getRandomInteger(MIN_LIKES_INTEGER, MAX_LIKES_INTEGER),
+      comments: getComments(getRandomInteger(MIN_COMMENTS_INTEGER, MAX_COMMENTS_INTEGER))
     });
   }
   return result;
