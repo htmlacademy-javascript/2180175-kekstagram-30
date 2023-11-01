@@ -1,5 +1,4 @@
-import { getRandomInteger, getComments, getMocks } from './getting-data';
-getRandomInteger();
-getComments();
-console.log(getMocks(25));
+import { getRandomInteger, getComments, getMocks } from './getting-data.js';
+import { renderThumbnails } from './thumbnail.js';
+renderThumbnails(getMocks(25));
 
