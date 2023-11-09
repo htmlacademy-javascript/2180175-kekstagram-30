@@ -41,4 +41,6 @@ const getMocks = function (idCount) {
   return result;
 };
 
-export { getRandomInteger, getComments, getMocks };
+const isEscapeKey = (evt) => evt.key === 'Escape';
+
+export { getRandomInteger, getComments, getMocks, isEscapeKey };
