@@ -1,8 +1,4 @@
-import { openPicture } from './rendering.js';
-
 const thumbnailTemplate = document.querySelector('#picture').content.querySelector('.picture');
-
-const container = document.querySelector('.pictures');
 
 const thumbnailCreate = (url, description, likes, comments, id) => {
   const thumbnail = thumbnailTemplate.cloneNode(true);
@@ -14,14 +10,13 @@ const thumbnailCreate = (url, description, likes, comments, id) => {
   return thumbnail;
 };
 
-const renderThumbnails = (pictures) => {
+const renderThumbnails = (pictures, container) => {
   const fragment = document.createDocumentFragment();
   pictures.forEach((picture) => {
     const thumbnail = thumbnailCreate(picture.url, picture.description, picture.likes, picture.comments, picture.id);
     fragment.append(thumbnail);
   });
   container.append(fragment);
-  container.addEventListener('click', openPicture);
 };
 
 export { renderThumbnails };

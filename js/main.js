@@ -1,3 +1,3 @@
 import { getMocks } from './getting-data.js';
-import { renderThumbnails } from './thumbnail.js';
-renderThumbnails(getMocks(25));
+import { renderGallery } from './gallery.js';
+renderGallery(getMocks(25));
