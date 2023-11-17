@@ -1,4 +1,4 @@
-import { isEscapeKey } from './getting-data';
+import { isEscapeKey } from './escape';
 import { renderComments } from './comment';
 const bigPictureElement = document.querySelector('.big-picture');
 const bodyElement = document.querySelector('body');
@@ -11,14 +11,15 @@ const hidePicture = () => {
 
 const onClosePictureButtonClick = () => {
   hidePicture();
+  document.removeEventListener('click', onClosePictureButtonClick);
 };
 
 function onDocumentKeydown(evt) {
   if (isEscapeKey(evt)) {
     evt.preventDefault();
     hidePicture();
+    document.removeEventListener('keydown', onDocumentKeydown);
   }
-  document.removeEventListener('keydown', onDocumentKeydown);
 }
 
 const renderPicture = ({ url, description, likes }) => {
@@ -37,7 +38,6 @@ const showPicture = (pictureData) => {
 };
 
 closePictureButtonElement.addEventListener('click', onClosePictureButtonClick);
-
 export { showPicture };
 
 
