@@ -1,6 +1,8 @@
 const commentsListElement = document.querySelector('.social__comments');
 
-const commentElement = document.querySelector('.social__comment');
+const commentElement = document
+  .querySelector('#comment')
+  .content.querySelector('.social__comment');
 
 const createComment = ({ avatar, message, name }) => {
   const newComment = commentElement.cloneNode(true);

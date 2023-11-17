@@ -3,6 +3,7 @@ import { renderComments } from './comment';
 const bigPictureElement = document.querySelector('.big-picture');
 const bodyElement = document.querySelector('body');
 const closePictureButtonElement = document.querySelector('.big-picture__cancel');
+const bigPictureImg = document.querySelector('.big-picture__img img');
 
 const hidePicture = () => {
   bigPictureElement.classList.add('hidden');
@@ -23,8 +24,8 @@ function onDocumentKeydown(evt) {
 }
 
 const renderPicture = ({ url, description, likes }) => {
-  bigPictureElement.querySelector('.big-picture__img img').src = url;
-  bigPictureElement.querySelector('.big-picture__img img').alt = description;
+  bigPictureImg.src = url;
+  bigPictureImg.alt = description;
   bigPictureElement.querySelector('.likes-count').textContent = likes;
   bigPictureElement.querySelector('.social__caption').textContent = description;
 };
