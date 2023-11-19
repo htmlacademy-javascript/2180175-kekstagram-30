@@ -56,6 +56,9 @@
               class="img-upload__form"
               id="upload-select-image"
               autocomplete="off"
+              action="https://30.javascript.pages.academy/kekstagram"
+              method="post"
+              enctype="multipart/form-data"
             >
               <!-- Изначальное состояние поля для загрузки изображения -->
               <fieldset class="img-upload__start">
@@ -451,6 +454,17 @@
         <h2 class="data-error__title">Не удалось загрузить данные</h2>
       </section>
     </template>
+    <template id="comment">
+      <li class="social__comment">
+        <img
+        class="social__picture"
+        src="{{аватар}}"
+        alt="{{имя комментатора}}"
+        width="35" height="35">
+        <p class="social__text">{{текст комментария}}</p>
+      </li>
+    </template>
+    <script src="vendor/pristine/pristine.min.js"></script>
     <script type="module" src="js/main.js"></script>
   </body>
 </html>
